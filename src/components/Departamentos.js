@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Global from './Global';
+import Global from './../Global';
+import Empleados from './Empleados';
 export default class Departamentos extends Component {
     selectDepartamentosRef = React.createRef();
     state = {
         departamentos: []
         , status: false
         , empleados: []
+        , iddepartamento: 0
     }
     cargarDepartamentos = () => {
         var request = "/api/departamentos";
@@ -24,12 +26,8 @@ export default class Departamentos extends Component {
     buscarEmpleados = (e) => {
         e.preventDefault();
         var iddepartamento = this.selectDepartamentosRef.current.value;
-        var request = "/api/Empleados/EmpleadosDepartamento/" + iddepartamento;
-        var url = Global.urlempleados + request;
-        axios.get(url).then(res => {
-            this.setState({
-                empleados: res.data
-            });
+        this.setState({
+            iddepartamento: iddepartamento
         });
     }
     render() {
@@ -49,12 +47,9 @@ export default class Departamentos extends Component {
                     </select>
                     <button onClick={this.buscarEmpleados}>Mostrar empleados</button>
                 </form>
-                {this.state.empleados.length > 0 && (
-                    <ul>
-                        {this.state.empleados.map((emp, index) => {
-                            return (<li key={index}>{emp.apellido}</li>)
-                        })}
-                    </ul>
+                {this.state.iddepartamento != 0 && (
+                    <Empleados iddepartamento={this.state.iddepartamento}
+                    empleados={this.state.empleados}/>
                 )}
             </div>
         )
