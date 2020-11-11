@@ -13,8 +13,8 @@ export default class InsertarDepartamento extends Component {
     nuevoDepartamento = (e) => {
         e.preventDefault();
         var num = parseInt(this.cajanumeroref.current.value);
-        var nom = parseInt(this.cajanombreref.current.value);
-        var loc = parseInt(this.cajalocalidadref.current.value);
+        var nom = this.cajanombreref.current.value;
+        var loc = this.cajalocalidadref.current.value;
         var dept = {
             numero:num, nombre:nom,localidad:loc
         };
@@ -38,9 +38,9 @@ export default class InsertarDepartamento extends Component {
                     <label>Número</label>
                     <input type="number" name="cajanumero" className="form_control" ref={this.state.cajanumeroref}/><br/>
                     <label>Nombre</label>
-                    <input type="number" name="cajanombre" className="form_control" ref={this.state.cajanombreref}/><br/>
-                    <label>Localiodad: </label>
-                    <input type="number" name="cajalocalidad" className="form_control" ref={this.state.cajalocalidadref}/><br/>
+                    <input type="text" name="cajanombre" className="form_control" ref={this.state.cajanombreref}/><br/>
+                    <label>Localidad: </label>
+                    <input type="text" name="cajalocalidad" className="form_control" ref={this.state.cajalocalidadref}/><br/>
                     <button className="btn-success">Insertar Departamento</button>
                     
 

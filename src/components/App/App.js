@@ -12,7 +12,6 @@ import MenuDepartamentos from './../Crud/MenuDepartamentos';
 function App() {
   return (
     <div className="App">
-      <MenuDepartamentos/>
       <Router/>
     </div>
   );

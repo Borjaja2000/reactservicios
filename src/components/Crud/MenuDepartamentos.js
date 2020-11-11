@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import {NavLink} from 'react-router-dom';
 
 export default class MenuDepartamentos extends Component {
     render() {
         return (
             <div>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <NavLink class="navbar-brand" to="#">Navbar</NavLink>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,24 +14,24 @@ export default class MenuDepartamentos extends Component {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <NavLink class="nav-link" to="/">Home <span class="sr-only">(current)</span></NavLink>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/create">Nuevo departamento</a>
+        <NavLink class="nav-link" to="/create">Nuevo departamento</NavLink>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <NavLink class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
-        </a>
+        </NavLink>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <NavLink class="dropdown-item" to="#">Action</NavLink>
+          <NavLink class="dropdown-item" to="#">Another action</NavLink>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <NavLink class="dropdown-item" to="#">Something else here</NavLink>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <NavLink class="nav-link disabled" to="#">Disabled</NavLink>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
